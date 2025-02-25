@@ -23,6 +23,7 @@ body {
     border-radius: 10px;
 }
 
+/* Download Button - Always Visible */
 .download-btn {
     position: absolute;
     top: 10px;
@@ -30,16 +31,17 @@ body {
     background: rgba(0, 0, 0, 0.7);
     color: white;
     border: none;
-    padding: 6px 12px;
-    border-radius: 5px;
+    padding: 8px 14px;
+    border-radius: 50%;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 18px;
     text-decoration: none;
-    display: none;
+    display: block;
+    transition: background 0.3s;
 }
 
-.image-box:hover .download-btn {
-    display: block;
+.download-btn i {
+    font-size: 20px;
 }
 
 .download-btn:hover {
@@ -47,12 +49,7 @@ body {
     color: black;
 }
 
-#search-box {
-    max-width: 500px;
-    border-radius: 8px;
-    font-size: 18px;
-}
-
+/* Loader Styles */
 #loader-container {
     position: fixed;
     width: 100%;
@@ -84,6 +81,7 @@ body {
     }
 }
 
+/* Responsive Adjustments */
 @media (max-width: 767px) {
     #search-box {
         width: 100%;
@@ -92,5 +90,14 @@ body {
 
     .image-box {
         height: 250px;
+    }
+
+    .download-btn {
+        padding: 6px 10px;
+        font-size: 16px;
+    }
+
+    .download-btn i {
+        font-size: 18px;
     }
 }

@@ -9,11 +9,26 @@ const loaderContainer = document.getElementById("loader-container");
 let keyword = "";
 let page = 1;
 
+// Function to download an image directly
+function downloadImage(url) {
+    fetch(url)
+        .then(response => response.blob())
+        .then(blob => {
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "image.jpg";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        })
+        .catch(error => console.error("Download error:", error));
+}
+
 async function searchImages() {
     keyword = searchBox.value.trim();
     if (!keyword) return;
 
-    // Show full-screen loader
+    // Show loader
     loaderContainer.style.display = "flex";
 
     const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyword}&client_id=${accessKey}&per_page=12`;
@@ -33,7 +48,9 @@ async function searchImages() {
             imageBox.innerHTML = `
                 <div class="image-box">
                     <img src="${result.urls.regular}" class="img-fluid" alt="Image">
-                    <a href="${result.urls.full}" class="download-btn" target="_blank" download>⬇</a>
+                    <button class="download-btn" onclick="downloadImage('${result.urls.full}')">
+                        <i class="bi bi-cloud-arrow-down"></i>
+                    </button>
                 </div>
             `;
 
