@@ -2,7 +2,7 @@
 
 PXFinder is a fast and responsive image search engine built using **JavaScript**, **Bootstrap**, and the **Unsplash API**. It allows users to search, explore, and download high-quality images seamlessly.  
 
-🚀 **Live Demo:** [PXFinder](https://github.com/rohitanchal/PXFinder)  
+🚀 **Live Demo:** [PXFinder](https://rohitanchal.github.io/PXFinder/)  
 
 ---
 
@@ -14,16 +14,6 @@ PXFinder is a fast and responsive image search engine built using **JavaScript**
 ✔️ **"Show More" button** for infinite scrolling  
 ✔️ **Loading animation** for smooth user experience  
 ✔️ **Modern UI** built with Bootstrap  
-
----
-
-## 🎨 Screenshots  
-
-### 🔎 **Home Page & Search**  
-![PXFinder Search](https://via.placeholder.com/800x400?text=Search+Page)  
-
-### 📷 **Image Results**  
-![PXFinder Results](https://via.placeholder.com/800x400?text=Image+Results)  
 
 ---
 
