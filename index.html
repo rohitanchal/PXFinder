@@ -4,43 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PXFinder - Discover & Download</title>
-
+    <meta name="description" content="PXFinder - Search and download high-quality images instantly. Discover a vast collection of stunning visuals for free.">
+    <meta name="keywords" content="free images, stock photos, download images, HD images, image search">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="PXFinder - Discover & Download Images">
+    <meta property="og:description" content="Find and download high-quality images for free with PXFinder.">
+    <meta property="og:image" content="https://yourwebsite.com/preview.jpg">
+    <meta property="og:url" content="https://yourwebsite.com/">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PXFinder - Discover & Download Images">
+    <meta name="twitter:description" content="Find and download high-quality images for free with PXFinder.">
+    <meta name="twitter:image" content="https://yourwebsite.com/preview.jpg">
+    
+    <title>PXFinder - Discover & Download High-Quality Images</title>
+    
     <link rel="icon" type="image/png" href="./favicon.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "PXFinder",
+            "url": "https://yourwebsite.com/",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://yourwebsite.com/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        }
+    </script>
 </head>
 
 <body class="bg-dark text-white">
-
-    <!-- Heading -->
-    <div class="container text-center mt-5">
+    <header class="container text-center mt-5">
         <h1 class="mb-4 fw-bold">PXFinder - Discover & Download</h1>
-        <form id="search-form" class="d-flex justify-content-center">
-            <input type="text" id="search-box" class="form-control w-50 me-2 shadow-lg" placeholder="Search images...">
-            <button class="btn btn-danger fw-bold px-4">Search</button>
+        <form id="search-form" class="d-flex justify-content-center" role="search">
+            <input type="text" id="search-box" class="form-control w-50 me-2 shadow-lg" placeholder="Search images..." aria-label="Search images">
+            <button class="btn btn-danger fw-bold px-4" type="submit">Search</button>
         </form>
+    </header>
+    
+    <div id="loader-container" aria-hidden="true">
+        <div class="loader" role="status"></div>
     </div>
+    
+    <main class="container mt-4">
+        <section id="search-result" class="row g-4"></section>
+    </main>
 
-    <!-- Fullscreen Loader -->
-    <div id="loader-container">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Image Results -->
-    <div class="container mt-4">
-        <div id="search-result" class="row g-4"></div>
-    </div>
-
-    <!-- Show More Button -->
     <div class="text-center my-4">
-        <button id="show-more-btn" class="btn btn-danger fw-bold px-4 d-none">Show More</button>
+        <button id="show-more-btn" class="btn btn-danger fw-bold px-4 d-none" aria-label="Show more images">Show More</button>
     </div>
 
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
-
 </html>
